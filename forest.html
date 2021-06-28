@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href = "mycss.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js"></script>
+</head>
+<body>
+    
+    <h1>My Schedule</h1>
+
+    <div style="text-align: center, line;">
+      <div class="upper">
+        <form></br>   
+          Name: <input type="text" placeholder="your name" style="padding: 7px; border:2px;">
+          Date: <input type = "date" style="padding: 5px; border:2px;"></br></br>
+        </form> 
+      </div>  
+    </div>
+      
+    <div class="task-list task-container">
+      <h2>Mourning</h2>
+      <div class="field_wrapper-1">
+        <input type = "time" style="padding: 1px; border: 0px;" value="09:30"><input type="text" size="40" style="margin-left:20px; padding: 2px; margin-bottom: 5px; margin-top: 5px;" value="抵達＆集合">&nbsp; &nbsp; at<input type="text" size="30" style="margin-left:20px; padding: 2px;" value="合歡山登山口">&nbsp; &nbsp;<a href="javascript:void(0);" class="add_button-1" title="Add field"><img src="plus.png" style="height: 20px; vertical-align:middle;"/></a></div>
+      </div>
+    </div>
+
+    <div class="task-list task-container">
+      <h2>Afternoon</h2> 
+      <div class="field_wrapper-2">
+        <input type = "time" style="padding: 1px; border: 0px;" value="12:00"><input type="text" size="40" style="margin-left:20px; padding: 2px; margin-bottom: 5px; margin-top: 5px;" value="吃自備午餐">&nbsp; &nbsp; at<input type="text" size="30" style="margin-left:20px; padding: 2px;" value="山頂！">&nbsp; &nbsp;<a href="javascript:void(0);" class="add_button-2" title="Add field"><img src="plus.png" style="height: 20px; vertical-align:middle;"/></a></div>
+      </div>
+    </div>
+
+    <div class="task-list task-container">
+      <h2>Evening</h2>
+      <div class="field_wrapper-3">
+        <input type = "time" style="padding: 1px; border: 0px;" value="19:00"><input type="text" size="40" style="margin-left:20px; padding: 2px; margin-bottom: 5px; margin-top: 5px;" value="按摩">&nbsp; &nbsp; at<input type="text" size="30" style="margin-left:20px; padding: 2px;" value="吳神父腳底按摩">&nbsp; &nbsp;<a href="javascript:void(0);" class="add_button-3" title="Add field"><img src="plus.png" style="height: 20px; vertical-align:middle;"/></a></div>
+      </div>
+    </div>
+  
+    <div style="text-align: center;">
+    <input class=btn type='button' id='but_screenshot' value='TAKE A SCREENSHOT ↓' onclick='screenshot();'><br/>
+    </div>
+
+    <button>Change Background Color</button>
+    <button onclick="myFunction()" style="position:absolute; top: 8%; left: 72%;">HELP</button>
+
+    <a href="date.html"><img alt="date" src="date.png" style="position:absolute; top:20%; left:4%; height: 12%;"></a>
+    <a href="family.html"><img alt="date" src="family.png" style="position:absolute; top:40%; left:4%; height: 12%;"></a>
+    <a href="hamburger.html"><img alt="date" src="hamburger.png" style="position:absolute; top:60%; left:4%; height: 12%;"></a>
+    <a href="forest.html"><img alt="date" src="forest.png" style="position:absolute; top:80%; left:4%; height: 12%;"></a>
+
+    <a href="world.html"><img alt="date" src="world.png" style="position:absolute; top:20%; right:4%; height: 12%;"></a>
+    <a href="friends.html"><img alt="date" src="friends.png" style="position:absolute; top:40%; right:4%; height: 12%;"></a>
+    <a href="beach.html"><img alt="date" src="beach.png" style="position:absolute; top:60%; right:4%; height: 12%;"></a>
+    <a href="roller-coaster.html"><img alt="date" src="roller-coaster.png" style="position:absolute; top:80%; right:4%; height: 12%;"></a>
+
+    <script>
+      function myFunction() {
+        alert("1. Design your schedule 2. Take a screenshot 3. Save and share your schedule");
+      }
+    </script>
+
+    <script type='text/javascript'>
+      function screenshot(){
+        html2canvas(document.body).then(function(canvas) {
+        document.body.appendChild(canvas);
+      });
+      }
+    </script>
+
+    <script type="text/javascript">
+      var color = ["#FDF0C4", "#F7A992", "#82A0C2", "#F3CDA9", "#EE529E", "#774836", "#537479", "#000000", 
+                "#FFD195", "#5D9B84", "#DE7E44", "#41354D", "#82363A", "#519D90", "#E69675", "#E55151", 
+                "#C8782F", "#E1B878", "#75ACC0", "#66202A", "#8FB0A9", "#D76735", "#D6F1C4", "#DE4B43", 
+                "#2F375B", "#01A7B7", "#8B7344", "#73A1B0", "#FF7E57", "#85496F", "#D09C8E", "#724559", 
+                "#FCB7A8", "#FCD997", "#95A7B5", "#CD7F7D", "#6C9575", "#FBF3DE", "#B0553A", "#B4D3AA", 
+                "#84D2DE", "#FFFFFF"];
+      var i = 0;
+      document.querySelector("button").addEventListener("click", 
+          function(){
+              i = i < color.length ? ++ i : 0;
+      document.querySelector("body").style.background = color[i]
+          })
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            var maxField = 8; //Input fields increment limitation
+            var addButton = $('.add_button-1'); //Add button selector
+            var wrapper = $('.field_wrapper-1'); //Input field wrapper
+
+            var fieldHTML = '<div><input type = "time" style="padding: 1px; border: 0px;"><input type="text" size="40" style="margin-left:20px; padding: 2px; margin-bottom: 5px; margin-top:"5px";>&nbsp; &nbsp; at<input type="text" size="30" style="margin-left:20px; padding: 2px;">&nbsp; &nbsp;<a href="javascript:void(0);" class="remove_button"><img src="remove.png" style="height: 20px; vertical-align:middle;"/></a></div>';
+            var x = 1; //Initial field counter is 1
+            
+            //Once add button is clicked
+            $(addButton).click(function(){
+                //Check maximum number of input fields
+                if(x < maxField){ 
+                    x++; //Increment field counter
+                    $(wrapper).append(fieldHTML); //Add field html
+                }
+            });
+            
+            //Once remove button is clicked
+            $(wrapper).on('click', '.remove_button', function(e){
+                e.preventDefault();
+                $(this).parent('div').remove(); //Remove field html
+                x--; //Decrement field counter
+            });
+        });
+    </script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+          var maxField = 8; //Input fields increment limitation
+          var addButton = $('.add_button-2'); //Add button selector
+          var wrapper = $('.field_wrapper-2'); //Input field wrapper
+
+          var fieldHTML = '<div><input type = "time" style="padding: 1px; border: 0px;"><input type="text" size="40" style="margin-left:20px; padding: 2px; margin-bottom: 5px; margin-top:"5px";>&nbsp; &nbsp; at<input type="text" size="30" style="margin-left:20px; padding: 2px;">&nbsp; &nbsp;<a href="javascript:void(0);" class="remove_button"><img src="remove.png" style="height: 20px; vertical-align:middle;"/></a></div>';
+          var x = 1; //Initial field counter is 1
+          
+          //Once add button is clicked
+          $(addButton).click(function(){
+              //Check maximum number of input fields
+              if(x < maxField){ 
+                  x++; //Increment field counter
+                  $(wrapper).append(fieldHTML); //Add field html
+              }
+          });
+          
+          //Once remove button is clicked
+          $(wrapper).on('click', '.remove_button', function(e){
+              e.preventDefault();
+              $(this).parent('div').remove(); //Remove field html
+              x--; //Decrement field counter
+          });
+      });
+    </script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+          var maxField = 8; //Input fields increment limitation
+          var addButton = $('.add_button-3'); //Add button selector
+          var wrapper = $('.field_wrapper-3'); //Input field wrapper
+
+          var fieldHTML = '<div><input type = "time" style="padding: 1px; border: 0px;"><input type="text" size="40" style="margin-left:20px; padding: 2px; margin-bottom: 5px; margin-top:"5px";>&nbsp; &nbsp; at<input type="text" size="30" style="margin-left:20px; padding: 2px;">&nbsp; &nbsp;<a href="javascript:void(0);" class="remove_button"><img src="remove.png" style="height: 20px; vertical-align:middle;"/></a></div>';
+          var x = 1; //Initial field counter is 1
+          
+          //Once add button is clicked
+          $(addButton).click(function(){
+              //Check maximum number of input fields
+              if(x < maxField){ 
+                  x++; //Increment field counter
+                  $(wrapper).append(fieldHTML); //Add field html
+              }
+          });
+          
+          //Once remove button is clicked
+          $(wrapper).on('click', '.remove_button', function(e){
+              e.preventDefault();
+              $(this).parent('div').remove(); //Remove field html
+              x--; //Decrement field counter
+          });
+      });
+    </script>
+
+  </body>
+</html>
